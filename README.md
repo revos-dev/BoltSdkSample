@@ -2,7 +2,7 @@
 A Sample app demonstrating the boltsdk api usage.
 
 # sync the library from app level build.gradle
-implementation 'in.revos.android:boltCore:1.0.32'
+implementation 'in.revos.android:boltCore:1.0.34'
 
 # Initialize bolt-sdk passing the activity context, auth-token, user-id
 ```

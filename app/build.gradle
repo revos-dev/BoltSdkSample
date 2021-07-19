@@ -37,7 +37,7 @@ android {
 
 dependencies {
     /* BoltCore sdk */
-    implementation 'in.revos.android:boltCore:1.0.32'
+    implementation 'in.revos.android:boltCore:1.0.34'
 
     /* androidx libraries */
     implementation 'androidx.appcompat:appcompat:1.2.0'
