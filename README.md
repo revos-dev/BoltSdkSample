@@ -1,10 +1,16 @@
-# BoltSDKSample
-A Sample app demonstrating the boltsdk api usage.
+BoltSDK
+=====
 
-# sync the library from app level build.gradle
-implementation 'in.revos.android:boltCore:1.0.34'
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/in.revos.android/boltCore/badge.svg)](https://maven-badges.herokuapp.com/maven-central/in.revos.android/boltCore) | [View BoltSdk's documentation][1] | [Report an issue with BoltSDK][2]
 
-# Add required repositories to app/build.gradle
+BoltSDK is a fast and efficient library for Android that wraps locating EV chargers on map, navigate to charger station location, book a charger to charge your EV. Keeps track of booking history, manage subscriptions, earning history.
+
+![](static/ic_launcher.png)
+
+# Download
+----------
+With Gradle:
+
 ```
 repositories {
         mavenCentral()
@@ -12,9 +18,17 @@ repositories {
         maven { url 'https://maven.cashfree.com/release'}
         google()
 }
+
+dependencies {
+    implementation 'in.revos.android:boltCore:1.0.34'
+}
 ```
 
-# Initialize bolt-sdk passing the activity context, auth-token, user-id
+# How do I use Bolt SDK ?
+-------------------------
+Check the [wiki][1] for detailed documentation
+
+Simple use cases will look something like this:
 ```
 public class MainActivity extends AppCompatActivity {
 
@@ -40,3 +54,5 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 ```
+[1]: https://github.com/revos-dev/BoltSdkSample/wiki
+[2]: https://github.com/revos-dev/BoltSdkSample/issues
