@@ -7,8 +7,8 @@ BoltSDK is a fast and efficient library for Android that wraps locating EV charg
 
 ![](static/ic_launcher.png)
 
-# Download
-----------
+Download
+--------
 With Gradle:
 
 ```
@@ -24,8 +24,8 @@ dependencies {
 }
 ```
 
-# How do I use Bolt SDK ?
--------------------------
+How do I use Bolt SDK ?
+-----------------------
 Check the [wiki][1] for detailed documentation
 
 Simple use cases will look something like this:
