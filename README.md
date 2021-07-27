@@ -4,6 +4,16 @@ A Sample app demonstrating the boltsdk api usage.
 # sync the library from app level build.gradle
 implementation 'in.revos.android:boltCore:1.0.34'
 
+# Add required repositories to app/build.gradle
+```
+repositories {
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven { url 'https://maven.cashfree.com/release'}
+        google()
+}
+```
+
 # Initialize bolt-sdk passing the activity context, auth-token, user-id
 ```
 public class MainActivity extends AppCompatActivity {
