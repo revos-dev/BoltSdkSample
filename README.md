@@ -1,58 +1,21 @@
-BoltSDK
-=====
+Overview
 
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/in.revos.android/boltCore/badge.svg)](https://maven-badges.herokuapp.com/maven-central/in.revos.android/boltCore) | [View BoltSdk's documentation][1] | [Report an issue with BoltSDK][2]
+This section shows how to install the BOLT Bluetooth SDK, start your first charging session andvisualize the data in the Bolt Console.
 
-BoltSDK is a fast and efficient library for Android that wraps locating EV chargers on map, navigate to charger station location, book a charger to charge your EV. Keeps track of booking history, manage subscriptions, earning history.
+Import SDK
 
-![](static/ic_launcher.png)
+To use the BOLT Android SDK, add the following dependency in your app’s build.gradle file:
 
-Download
---------
-With Gradle:
+	dependencies
+	{
+		/* BoltCore sdk */
+		implementation ‘in.revos.android:bolt-ble:1.0.1'
+	}
 
-```
-repositories {
-        mavenCentral()
-        maven { url "https://jitpack.io" }
-        maven { url 'https://maven.cashfree.com/release'}
-        google()
-}
+Initialize the Bolt SDK
 
-dependencies {
-    implementation 'in.revos.android:boltCore:1.0.34'
-}
-```
+Initialize the BOLT BLE SDK as mentioned below:
 
-How do I use Bolt SDK ?
------------------------
-Check the [wiki][1] for detailed documentation
+	val boltManager = BoltSdk.getBoltManager(lifecycleOwner Object, context, bookingObject)
 
-Simple use cases will look something like this:
-```
-public class MainActivity extends AppCompatActivity {
-
-    private static String TAG = MainActivity.class.getName();
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        BoltSDK.getInstance().initialize(MainActivity.this, "your_generated_api_key", "user_id", new StatusCallBack() {
-            @Override
-            public void onStatusChange(String s) {
-                Log.d(TAG, "onStatusChange = " + s);
-            }
-
-            @Override
-            public void onError(String s) {
-                Log.d(TAG, "onError = " + s);
-            }
-        }, null, null, null, null, null, null);
-
-        BoltSDK.getInstance().launchBolt();
-    }
-}
-```
-[1]: https://github.com/revos-dev/BoltSdkSample/wiki
-[2]: https://github.com/revos-dev/BoltSdkSample/issues
+Pass the entire ongoing bookingObject as a String. Booking object can be received from BOLT apis on successfully creating a booking. For more details on BOLT apis, refer the BOLT apis documentation.
